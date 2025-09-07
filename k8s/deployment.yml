@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-prom-app
+spec:
+  replicas: 2 # best practice to declare replicas
+  selector:
+    matchLabels:
+      app: node-prom-app
+  template:
+    metadata:
+      labels:
+        app: node-prom-app
+    spec:
+      containers:
+        - name: node-prom-app
+          image: waqasiqbal1/node-prom-app:latest
+          ports:
+            - containerPort: 3000
