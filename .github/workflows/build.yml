@@ -32,7 +32,7 @@ jobs:
         uses: sonarsource/sonarqube-scan-action@v3
         with:
           args: >
-            -Dsonar.projectKey=nodejs-with-prom-app
+            -Dsonar.projectKey=nodejs-prom-app
             -Dsonar.sources=.
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
