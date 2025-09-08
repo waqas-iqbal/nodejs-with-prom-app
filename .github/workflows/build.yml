@@ -71,3 +71,5 @@ jobs:
 
       - name: Test K8s access
         run: kubectl get nodes
+
+        #
