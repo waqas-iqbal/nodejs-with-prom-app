@@ -69,15 +69,20 @@ jobs:
       - name: Update kubeconfig for EKS
         run: aws eks update-kubeconfig --name my-eks-cluster --region us-east-1
 
-      - name: Debug AWS Identity
-        run: aws sts get-caller-identity
-
-      - name: Debug kubeconfig
-        run: kubectl config view --minify
-
-
       - name: Test K8s access
         run: kubectl get nodes
+
+      - name: Deploy Application to EKS
+        run: kubectl apply -f k8s/deployment.yml
+
+      - name: Verify Pods
+        run: kubectl get pods
+
+      - name: Deploy Service
+        run: kubectl apply -f k8s/service.yml
+
+      - name: Verify Service
+        run: kubectl get svc
         
 
         

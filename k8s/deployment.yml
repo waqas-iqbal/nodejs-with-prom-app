@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: node-prom-app
-          image: waqasiqbal1/node-prom-app:latest
+          image: waqasiqbal1/nodejs-with-prom-app
           ports:
             - containerPort: 3000
