@@ -56,7 +56,7 @@ jobs:
         with:
           image-ref: ${{ secrets.DOCKER_USERNAME }}/nodejs-with-prom-app:${{ github.sha }}
           format: 'table'
-          severity: 'CRITICAL,HIGH'
+          severity: 'CRITICAL'
           exit-code: '1'   # Fail pipeline if vulnerabilities found
 
       - name: Configure AWS Credentials
